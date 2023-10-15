@@ -55,6 +55,7 @@
 		519D66F8297C52530095D717 = {
 			isa = PBXGroup;
 			children = (
+				5EFEACE32ADBDAAD00D71E42 /* README.md */,
 				519D6703297C52530095D717 /* TOM */,
 				519D6702297C52530095D717 /* Products */,
 			);
@@ -71,7 +72,6 @@
 		519D6703297C52530095D717 /* TOM */ = {
 			isa = PBXGroup;
 			children = (
-				5EFEACE32ADBDAAD00D71E42 /* README.md */,
 				519D6713297C52D00095D717 /* Info.plist */,
 				519D6704297C52530095D717 /* TOMApp.swift */,
 				519D6706297C52530095D717 /* ContentView.swift */,
