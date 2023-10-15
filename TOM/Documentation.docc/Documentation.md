@@ -1,5 +1,4 @@
-
-# `Welcome to my CPU/Assembly app help`
+# ``TOM``
 
 > Inspired by Paul Houdson from [HackingWithSwift](https://www.hackingwithswift.com), decided to move further and extend functionality of TOM application. It's purpose is to help understanding and learn in simple way about CPU register's, stack functionality and Assembly language which is direct 'translation' of CPU's instructions. Hope you'll find this app interesting.
 
@@ -14,7 +13,9 @@
 > Code can be executed as complete at once or step by step by increasing/decreasing number of lines to be executed
 
 > Memory size slider is to emulate Operating System Memory stack reservation and to see the effect of Instruction Pointer (EIP) overwriting effect (more to come)
- 
+
+## Overview
+
 ## `MOV` - assigns value/register to a register
 
 | Value | Register |
@@ -98,3 +99,10 @@
 | To register |
 | --- |
 | POP EAX
+
+
+## Topics
+
+### <!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@-->
+
+- <!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
