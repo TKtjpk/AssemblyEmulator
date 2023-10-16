@@ -56,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				5EFEACE32ADBDAAD00D71E42 /* README.md */,
+				5EFEACE12ADBD9E400D71E42 /* Documentation.docc */,
 				519D6703297C52530095D717 /* TOM */,
 				519D6702297C52530095D717 /* Products */,
 			);
@@ -84,7 +85,6 @@
 				519D6708297C52540095D717 /* Assets.xcassets */,
 				519D670D297C52540095D717 /* TOM.entitlements */,
 				519D670A297C52540095D717 /* Preview Content */,
-				5EFEACE12ADBD9E400D71E42 /* Documentation.docc */,
 			);
 			path = TOM;
 			sourceTree = "<group>";

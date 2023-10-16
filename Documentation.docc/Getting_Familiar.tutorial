@@ -1,0 +1,91 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Getting familiar") {
+        Getting familiar with basics of assembly
+        
+        @Image(source: "network.jpg", alt: "accessible description")
+    }
+    
+    @Section(title: "Assembly") {
+        @ContentAndMedia {
+            Description of Assembly code
+            
+            @Image(source: "main.png", alt: "accessible description")
+        }
+        
+        @Steps {
+            @Step {
+                Register's - Carefully read the comments of the code
+                
+                @Code(name: "registers.swift", file: "registers.swift") {
+                    @Image(source: "registers.png", alt: "accessible description")
+                }
+            }
+
+            @Step {
+                Instruction's - Carefully read the comments of the code
+                
+                @Code(name: "instructions.c", file: "instructions.c") {
+                    @Image(source: "instructions.png", alt: "accessible description")
+                }
+            }
+        }
+    }
+    
+    @Assessments {
+            @MultipleChoice {
+                Which of the Register's is holding a value of the next instruction to be executed ?
+
+                @Choice(isCorrect: false) {
+                    EAX pointer
+
+                    @Justification(reaction: "Try again!") {
+                        All four register as ..X are general purpose registers.
+                    }
+                }
+
+                @Choice(isCorrect: true) {
+                    EIP pointer
+
+                    @Justification(reaction: "That's right!") {
+                        Exactly. By overwriting this pointer, unexpected behaviour might happen. Often it's used in buffer overflow attacks.
+                    }
+                }
+
+                @Choice(isCorrect: false) {
+                    EBP pointer
+
+                    @Justification(reaction: "Try again!") {
+                        EBP & ESP pointers are directly connected to the stack memory. EBP is a pointer to stack's base and ESP holds current value of stack address.
+                    }
+                }
+            }
+            
+            @MultipleChoice {
+                Select which instructions are putting and grabbing inforamtion to/from stack.
+
+                @Choice(isCorrect: false) {
+                    ADD, SUB
+
+                    @Justification(reaction: "Try again!") {
+                        ADD - adds value/register to a register, SUB - substracts value/register from register
+                    }
+                }
+
+                @Choice(isCorrect: false) {
+                    MOV
+
+                    @Justification(reaction: "Try again!") {
+                        MOV - assigns value/register to a register
+                    }
+                }
+
+                @Choice(isCorrect: true) {
+                    PUSH, POP
+
+                    @Justification(reaction: "That's right!") {
+                        Yes, indeed, PUSH adds a value to a stack and POP grabs a value from a stack.
+                    }
+                }
+            }
+        }
+}

@@ -1,0 +1,16 @@
+@Tutorials(name: "Assembly emulator") {
+    @Intro(title: "Assembly emulator") {
+        Assembly emulator with simplified instructions (more to come). It's purpose is to get familiar with basics of Assembly language and improvement of Swift programming skills of mine.
+        This tutorial will guide you through the application so it'll be easier for you to follow.
+        
+        @Image(source: "main.png", alt: "<#accessible description#>")
+    }
+    
+    @Chapter(name: "Intro") {
+        Picture below presents the user interface description in details.
+        
+        @Image(source: "main.png", alt: "<#accessible description#>")
+        
+        @TutorialReference(tutorial: "doc:Getting_Familiar")
+    }
+}

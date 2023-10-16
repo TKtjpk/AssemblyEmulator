@@ -9,6 +9,9 @@ import Foundation
 import RegexBuilder
 
 class ViewModel: ObservableObject {
+    /// - Parameter none: Some parameter
+    /// - Returns: Don't know yet
+    /// - Note: Wahtever
     @Published var registers = [String: Int]()
     @Published var stack = [Int]()
     @Published var zx = 0
