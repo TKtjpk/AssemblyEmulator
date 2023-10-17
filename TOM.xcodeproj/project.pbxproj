@@ -18,9 +18,29 @@
 		5E5394DB2ACEDEDF0018F35A /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5394DA2ACEDEDF0018F35A /* HelpView.swift */; };
 		5E5394DD2ACEE67A0018F35A /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5394DC2ACEE67A0018F35A /* StackView.swift */; };
 		5E5394DF2ACEF2CF0018F35A /* SingleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5394DE2ACEF2CF0018F35A /* SingleStackView.swift */; };
+		5E9EE9152ADEE76500CFF7E9 /* TOMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9EE9142ADEE76500CFF7E9 /* TOMTests.swift */; };
+		5E9EE9222ADEE76F00CFF7E9 /* TOMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9EE9212ADEE76F00CFF7E9 /* TOMUITests.swift */; };
+		5E9EE9242ADEE76F00CFF7E9 /* TOMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9EE9232ADEE76F00CFF7E9 /* TOMUITestsLaunchTests.swift */; };
 		5EFEACE22ADBD9E400D71E42 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5EFEACE12ADBD9E400D71E42 /* Documentation.docc */; };
 		5EFEACE42ADBDAAD00D71E42 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5EFEACE32ADBDAAD00D71E42 /* README.md */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5E9EE9162ADEE76500CFF7E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 519D66F9297C52530095D717 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 519D6700297C52530095D717;
+			remoteInfo = TOM;
+		};
+		5E9EE9252ADEE76F00CFF7E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 519D66F9297C52530095D717 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 519D6700297C52530095D717;
+			remoteInfo = TOM;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		519D6701297C52530095D717 /* TOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +56,11 @@
 		5E5394DA2ACEDEDF0018F35A /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		5E5394DC2ACEE67A0018F35A /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		5E5394DE2ACEF2CF0018F35A /* SingleStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStackView.swift; sourceTree = "<group>"; };
+		5E9EE9122ADEE76500CFF7E9 /* TOMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TOMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E9EE9142ADEE76500CFF7E9 /* TOMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMTests.swift; sourceTree = "<group>"; };
+		5E9EE91F2ADEE76F00CFF7E9 /* TOMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TOMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E9EE9212ADEE76F00CFF7E9 /* TOMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMUITests.swift; sourceTree = "<group>"; };
+		5E9EE9232ADEE76F00CFF7E9 /* TOMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5EFEACE12ADBD9E400D71E42 /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		5EFEACE32ADBDAAD00D71E42 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +74,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5E9EE90F2ADEE76500CFF7E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E9EE91C2ADEE76F00CFF7E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -58,6 +97,8 @@
 				5EFEACE32ADBDAAD00D71E42 /* README.md */,
 				5EFEACE12ADBD9E400D71E42 /* Documentation.docc */,
 				519D6703297C52530095D717 /* TOM */,
+				5E9EE9132ADEE76500CFF7E9 /* TOMTests */,
+				5E9EE9202ADEE76F00CFF7E9 /* TOMUITests */,
 				519D6702297C52530095D717 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				519D6701297C52530095D717 /* TOM.app */,
+				5E9EE9122ADEE76500CFF7E9 /* TOMTests.xctest */,
+				5E9EE91F2ADEE76F00CFF7E9 /* TOMUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +140,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5E9EE9132ADEE76500CFF7E9 /* TOMTests */ = {
+			isa = PBXGroup;
+			children = (
+				5E9EE9142ADEE76500CFF7E9 /* TOMTests.swift */,
+			);
+			path = TOMTests;
+			sourceTree = "<group>";
+		};
+		5E9EE9202ADEE76F00CFF7E9 /* TOMUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5E9EE9212ADEE76F00CFF7E9 /* TOMUITests.swift */,
+				5E9EE9232ADEE76F00CFF7E9 /* TOMUITestsLaunchTests.swift */,
+			);
+			path = TOMUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -120,6 +180,42 @@
 			productReference = 519D6701297C52530095D717 /* TOM.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5E9EE9112ADEE76500CFF7E9 /* TOMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E9EE91A2ADEE76500CFF7E9 /* Build configuration list for PBXNativeTarget "TOMTests" */;
+			buildPhases = (
+				5E9EE90E2ADEE76500CFF7E9 /* Sources */,
+				5E9EE90F2ADEE76500CFF7E9 /* Frameworks */,
+				5E9EE9102ADEE76500CFF7E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E9EE9172ADEE76500CFF7E9 /* PBXTargetDependency */,
+			);
+			name = TOMTests;
+			productName = TOMTests;
+			productReference = 5E9EE9122ADEE76500CFF7E9 /* TOMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5E9EE91E2ADEE76F00CFF7E9 /* TOMUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E9EE9272ADEE76F00CFF7E9 /* Build configuration list for PBXNativeTarget "TOMUITests" */;
+			buildPhases = (
+				5E9EE91B2ADEE76F00CFF7E9 /* Sources */,
+				5E9EE91C2ADEE76F00CFF7E9 /* Frameworks */,
+				5E9EE91D2ADEE76F00CFF7E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E9EE9262ADEE76F00CFF7E9 /* PBXTargetDependency */,
+			);
+			name = TOMUITests;
+			productName = TOMUITests;
+			productReference = 5E9EE91F2ADEE76F00CFF7E9 /* TOMUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -127,11 +223,19 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					519D6700297C52530095D717 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					5E9EE9112ADEE76500CFF7E9 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 519D6700297C52530095D717;
+					};
+					5E9EE91E2ADEE76F00CFF7E9 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 519D6700297C52530095D717;
 					};
 				};
 			};
@@ -152,6 +256,8 @@
 			projectRoot = "";
 			targets = (
 				519D6700297C52530095D717 /* TOM */,
+				5E9EE9112ADEE76500CFF7E9 /* TOMTests */,
+				5E9EE91E2ADEE76F00CFF7E9 /* TOMUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -164,6 +270,20 @@
 				5EFEACE42ADBDAAD00D71E42 /* README.md in Resources */,
 				519D670C297C52540095D717 /* Preview Assets.xcassets in Resources */,
 				519D6709297C52540095D717 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E9EE9102ADEE76500CFF7E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E9EE91D2ADEE76F00CFF7E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +306,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5E9EE90E2ADEE76500CFF7E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E9EE9152ADEE76500CFF7E9 /* TOMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E9EE91B2ADEE76F00CFF7E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E9EE9222ADEE76F00CFF7E9 /* TOMUITests.swift in Sources */,
+				5E9EE9242ADEE76F00CFF7E9 /* TOMUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E9EE9172ADEE76500CFF7E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 519D6700297C52530095D717 /* TOM */;
+			targetProxy = 5E9EE9162ADEE76500CFF7E9 /* PBXContainerItemProxy */;
+		};
+		5E9EE9262ADEE76F00CFF7E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 519D6700297C52530095D717 /* TOM */;
+			targetProxy = 5E9EE9252ADEE76F00CFF7E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		519D670E297C52540095D717 /* Debug */ = {
@@ -364,6 +514,84 @@
 			};
 			name = Release;
 		};
+		5E9EE9182ADEE76500CFF7E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KKCT26533X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = private.com.TOMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TOM.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TOM";
+			};
+			name = Debug;
+		};
+		5E9EE9192ADEE76500CFF7E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KKCT26533X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = private.com.TOMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TOM.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TOM";
+			};
+			name = Release;
+		};
+		5E9EE9282ADEE76F00CFF7E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KKCT26533X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = private.com.TOMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = TOM;
+			};
+			name = Debug;
+		};
+		5E9EE9292ADEE76F00CFF7E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KKCT26533X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = private.com.TOMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = TOM;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -381,6 +609,24 @@
 			buildConfigurations = (
 				519D6711297C52540095D717 /* Debug */,
 				519D6712297C52540095D717 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E9EE91A2ADEE76500CFF7E9 /* Build configuration list for PBXNativeTarget "TOMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E9EE9182ADEE76500CFF7E9 /* Debug */,
+				5E9EE9192ADEE76500CFF7E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E9EE9272ADEE76F00CFF7E9 /* Build configuration list for PBXNativeTarget "TOMUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E9EE9282ADEE76F00CFF7E9 /* Debug */,
+				5E9EE9292ADEE76F00CFF7E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

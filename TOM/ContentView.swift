@@ -61,8 +61,11 @@ struct ContentView: View {
                     RegisterView(name: "Line", value: step, style: Color.gray.gradient, view: $view)
                 }
                         .onChange(of: step) { value in
-                            viewModel.run(code: document.text, limit: value)
+                            if step > 0 {
+                                viewModel.run(code: document.text, limit: value)
+                            }
                         }
+                        .accessibilityLabel("Stepper")
                 Spacer()
             }
             .padding()
@@ -105,6 +108,8 @@ struct ContentView: View {
                 Label("Play", systemImage: "play")
                     .symbolVariant(.fill)
             }
+            .accessibilityLabel(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/)
+            
             Spacer()
             Button {
                 viewModel.reset()
@@ -112,6 +117,7 @@ struct ContentView: View {
             } label: {
                 Label("Reset", systemImage: "arrow.counterclockwise")
             }
+            .accessibilityLabel("Label")
         }
     }
 }

@@ -9,9 +9,6 @@ import Foundation
 import RegexBuilder
 
 class ViewModel: ObservableObject {
-    /// - Parameter none: Some parameter
-    /// - Returns: Don't know yet
-    /// - Note: Wahtever
     @Published var registers = [String: Int]()
     @Published var stack = [Int]()
     @Published var zx = 0
@@ -20,7 +17,8 @@ class ViewModel: ObservableObject {
     private var jump = false
     
     private var lineNumber = 0
-
+    
+    /// - Note: Resets all registers to default value
     func reset() {
         registers = [
             "EAX": 0,
@@ -40,7 +38,9 @@ class ViewModel: ObservableObject {
         lineNumber = 0
         stack.removeAll()
     }
-  
+    
+    /// - Parameter code: Assembly code line as String
+    /// - Parameter limit: Number of lines to be executed
     func run(code: String, limit: Int) {
         reset()
 
@@ -116,7 +116,7 @@ class ViewModel: ObservableObject {
                 push(source: match.output.1)
             } else if let match = line.wholeMatch(of: popRegex) {
                 pop(destination: match.output.1)
-            } else if let match = line.wholeMatch(of: retRegex) {
+            } else if let _ = line.wholeMatch(of: retRegex) {
                 ret()
             } else {
                 addToLog("*** ERROR: Unknown command. Remember: all commands and registers are case-sensitive ***")
@@ -135,7 +135,7 @@ class ViewModel: ObservableObject {
             }
         }
     }
-
+        
     private func matchDigits() -> TryCapture<(Substring, Int)> {
         TryCapture {
             OneOrMore(.digit)
