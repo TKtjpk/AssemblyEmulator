@@ -9,6 +9,8 @@ import XCTest
 @testable import TOM
 
 final class TOMUITests: XCTestCase {
+    
+    var comandID: UUID!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,18 +24,25 @@ final class TOMUITests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    override func setUp() {
+    }
 
-    func testExample() throws {
+            func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
         //screenShot(app)
-        app.steppers["Stepper"].incrementArrows.element.tap()
-        //screenShot(app)
-        app.steppers["Stepper"].incrementArrows.element.tap()
-        //screenShot(app)
-        app.steppers["Stepper"].incrementArrows.element.tap()
-        //screenShot(app)
+//        let stepperUp = app.steppers["Stepper"].incrementArrows.element
+//
+//        stepperUp.tap()
+//        stepperUp.tap()
+//        stepperUp.tap()
+                
+        let incrementArrow = XCUIApplication().windows["Untitled"].steppers["Stepper"].children(matching: .incrementArrow).element
+        incrementArrow.click()
+        incrementArrow.click()
+        incrementArrow.click()
         app.steppers["Stepper"].decrementArrows.element.tap()
         //screenShot(app)
         app.buttons["Play"].tap()

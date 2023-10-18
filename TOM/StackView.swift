@@ -26,7 +26,7 @@ struct StackView: View {
                 Spacer()
             }
             ScrollView {
-                let commands = document.text.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
+                let commands = document.text.trimmingCharacters(in: .newlines).components(separatedBy: .newlines)
                 ForEach (0..<commands.count, id: \.self) { line in
                     HStack {
                         SingleStackView(value: ran - 32 * line, view: view, alignment: .center)

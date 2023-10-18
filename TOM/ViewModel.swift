@@ -12,7 +12,7 @@ class ViewModel: ObservableObject {
     @Published var registers = [String: Int]()
     @Published var stack = [Int]()
     @Published var zx = 0
-
+    
     @Published var log = ""
     private var jump = false
     
@@ -31,9 +31,9 @@ class ViewModel: ObservableObject {
             "EIP": 75654 * 32 - 32 * lineNumber,
             "ESP": 0
         ]
-
+        
         zx = 0
-
+        
         log = "--- Resetting all registers to their defaults… ---"
         lineNumber = 0
         stack.removeAll()
@@ -43,83 +43,85 @@ class ViewModel: ObservableObject {
     /// - Parameter limit: Number of lines to be executed
     func run(code: String, limit: Int) {
         reset()
-
+        
         guard code.isEmpty == false else { return }
-        let movRegex = Regex { "MOV "; matchRegister(); ", "; matchRegister() }
-        let movDRegex = Regex { "MOV "; matchDigits(); ", "; matchRegister() }
-        let addRegex = Regex { "ADD "; matchRegister(); ", "; matchRegister() }
-        let addDRegex = Regex { "ADD "; matchDigits(); ", "; matchRegister() }
-        let subRegex = Regex { "SUB "; matchRegister(); ", "; matchRegister() }
-        let subDRegex = Regex { "SUB "; matchDigits(); ", "; matchRegister() }
-        let copyRegex = Regex { "COPY "; matchRegister(); ", "; matchRegister() }
-        let andRegex = Regex { "AND "; matchRegister(); ", "; matchRegister() }
-        let orRegex = Regex { "OR "; matchRegister(); ", "; matchRegister() }
-        let cmpRegex = Regex { "CMP "; matchRegister(); ", "; matchRegister() }
-        let cmpDRegex = Regex { "CMP "; matchDigits(); ", "; matchRegister() }
-        let jeqRegex = Regex { "JEQ "; matchDigits() }
-        let jneqRegex = Regex { "JNEQ "; matchDigits() }
-        let jmpRegex = Regex { "JMP "; matchDigits() }
-        let incRegex = Regex { "INC "; matchRegister() }
-        let decRegex = Regex { "DEC "; matchRegister() }
-        let mulRegex = Regex { "MUL "; matchRegister(); ", "; matchRegister() }
-        let pushRegex = Regex { "PUSH "; matchRegister() }
-        let popRegex = Regex { "POP "; matchRegister() }
-        let retRegex = Regex { "RET"}
-
+        let movRegex = Regex { matchPrefix(); "MOV"; matchSpace(); matchRegister(); ", "; matchRegister() }
+        let movDRegex = Regex { matchPrefix(); "MOV"; matchSpace(); matchDigits(); ", "; matchRegister() }
+        let addRegex = Regex { matchPrefix(); "ADD"; matchSpace(); matchRegister(); ", "; matchRegister() }
+        let addDRegex = Regex { matchPrefix(); "ADD"; matchSpace(); matchDigits(); ", "; matchRegister() }
+        let subRegex = Regex { matchPrefix(); "SUB"; matchSpace(); matchRegister(); ", "; matchRegister() }
+        let subDRegex = Regex { matchPrefix(); "SUB"; matchSpace(); matchDigits(); ", "; matchRegister() }
+        let copyRegex = Regex { matchPrefix(); "COPY"; matchSpace(); matchRegister(); ", "; matchRegister() }
+        let andRegex = Regex { matchPrefix(); "AND"; matchSpace(); matchRegister(); ", "; matchRegister() }
+        let orRegex = Regex { matchPrefix(); "OR"; matchSpace(); matchRegister(); ", "; matchRegister() }
+        let cmpRegex = Regex { matchPrefix(); "CMP"; matchSpace(); matchRegister(); ", "; matchRegister() }
+        let cmpDRegex = Regex { matchPrefix(); "CMP"; matchSpace(); matchDigits(); ", "; matchRegister() }
+        let jeqRegex = Regex { matchPrefix(); "JEQ"; matchSpace(); matchDigits() }
+        let jneqRegex = Regex { matchPrefix(); "JNEQ"; matchSpace(); matchDigits() }
+        let jmpRegex = Regex { matchPrefix(); "JMP"; matchSpace(); matchDigits() }
+        let incRegex = Regex { matchPrefix(); "INC"; matchSpace(); matchRegister() }
+        let decRegex = Regex { matchPrefix(); "DEC"; matchSpace(); matchRegister() }
+        let mulRegex = Regex { matchPrefix(); "MUL"; matchSpace(); matchRegister(); ", "; matchRegister() }
+        let pushRegex = Regex { matchPrefix(); "PUSH"; matchSpace(); matchRegister() }
+        let popRegex = Regex { matchPrefix(); "POP"; matchSpace(); matchRegister() }
+        let retRegex = Regex { matchPrefix(); "RET" }
+        
         let lines = code.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
         var commandsUsed = 0
-
+        
         while lineNumber < limit {
             
-            let line = lines[lineNumber]
-
+            var line = lines[lineNumber]
+            
             if line.starts(with: "#") {
                 lineNumber += 1
                 continue
+            } else {
+                line = line.uppercased()
             }
             
             if let match = line.wholeMatch(of: movRegex) {
-                mov(source: match.output.1, destination: match.output.2)
+                mov(source: match.output.3, destination: match.output.4)
             } else if let match = line.wholeMatch(of: movDRegex) {
-                movD(value: match.output.1, destination: match.output.2)
+                movD(value: match.output.3, destination: match.output.4)
             } else if let match = line.wholeMatch(of: addRegex) {
-                add(source: match.output.1, destination: match.output.2)
+                add(source: match.output.3, destination: match.output.4)
             } else if let match = line.wholeMatch(of: addDRegex) {
-                addD(source: match.output.1, destination: match.output.2)
+                addD(source: match.output.3, destination: match.output.4)
             } else if let match = line.wholeMatch(of: subRegex) {
-                sub(source: match.output.1, destination: match.output.2)
+                sub(source: match.output.3, destination: match.output.4)
             } else if let match = line.wholeMatch(of: subDRegex) {
-                subD(source: match.output.1, destination: match.output.2)
+                subD(source: match.output.3, destination: match.output.4)
             } else if let match = line.wholeMatch(of: copyRegex) {
-                copy(source: match.output.1, destination: match.output.2)
+                copy(source: match.output.3, destination: match.output.4)
             } else if let match = line.wholeMatch(of: andRegex) {
-                and(source: match.output.1, destination: match.output.2)
+                and(source: match.output.3, destination: match.output.4)
             } else if let match = line.wholeMatch(of: orRegex) {
-                or(source: match.output.1, destination: match.output.2)
+                or(source: match.output.3, destination: match.output.4)
             } else if let match = line.wholeMatch(of: cmpRegex) {
-                cmp(source: match.output.1, destination: match.output.2)
+                cmp(source: match.output.3, destination: match.output.4)
             } else if let match = line.wholeMatch(of: cmpDRegex) {
-                cmpD(source: match.output.1, destination: match.output.2)
+                cmpD(source: match.output.3, destination: match.output.4)
             } else if let match = line.wholeMatch(of: jeqRegex) {
-                jeq(to: match.output.1)
+                jeq(to: match.output.3)
             } else if let match = line.wholeMatch(of: jneqRegex) {
-                jneq(to: match.output.1)
+                jneq(to: match.output.3)
             } else if let match = line.wholeMatch(of: jmpRegex) {
-                jmp(to: match.output.1)
+                jmp(to: match.output.3)
             } else if let match = line.wholeMatch(of: incRegex) {
-                inc(destination: match.output.1)
+                inc(destination: match.output.3)
             } else if let match = line.wholeMatch(of: decRegex) {
-                dec(destination: match.output.1)
+                dec(destination: match.output.3)
             } else if let match = line.wholeMatch(of: mulRegex) {
-                mul(source: match.output.1, destination: match.output.2)
+                mul(source: match.output.3, destination: match.output.4)
             } else if let match = line.wholeMatch(of: pushRegex) {
-                push(source: match.output.1)
+                push(source: match.output.3)
             } else if let match = line.wholeMatch(of: popRegex) {
-                pop(destination: match.output.1)
+                pop(destination: match.output.3)
             } else if let _ = line.wholeMatch(of: retRegex) {
                 ret()
             } else {
-                addToLog("*** ERROR: Unknown command. Remember: all commands and registers are case-sensitive ***")
+                addToLog("*** ERROR: Unknown command. Remember: minimum 1 space is required betwwen command and variable, comma with space required between variables ***")
                 return
             }
             
@@ -127,7 +129,7 @@ class ViewModel: ObservableObject {
             
             commandsUsed += 1
             self.lineNumber += 1
-
+            
             guard commandsUsed < 50_000 else {
                 reset()
                 addToLog("*** ERROR: Too many commands (check your code); exiting. ***")
@@ -135,7 +137,23 @@ class ViewModel: ObservableObject {
             }
         }
     }
-        
+    
+    private func matchPrefix() -> TryCapture<(Substring, String)> {
+        TryCapture {
+            ZeroOrMore(.whitespace)
+        } transform: { ch in
+            String(" ")
+        }
+    }
+    
+    private func matchSpace() -> TryCapture<(Substring, String)> {
+        TryCapture {
+            OneOrMore(.whitespace)
+        } transform: { ch in
+            String(" ")
+        }
+    }
+    
     private func matchDigits() -> TryCapture<(Substring, Int)> {
         TryCapture {
             OneOrMore(.digit)
