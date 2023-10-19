@@ -13,7 +13,7 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.hackingwithswift.TOM.source</string>
+				<string>com.tomaszkubicki.AssembyEmulator</string>
 			</array>
 		</dict>
 	</array>
@@ -29,7 +29,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.hackingwithswift.TOM.source</string>
+			<string>com.tomaszkubicki.AssembyEmulator</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

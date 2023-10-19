@@ -45,6 +45,7 @@ class ViewModel: ObservableObject {
         reset()
         
         guard code.isEmpty == false else { return }
+        let mainRegex = Regex { "MAIN:"}
         let movRegex = Regex { matchPrefix(); "MOV"; matchSpace(); matchRegister(); ", "; matchRegister() }
         let movDRegex = Regex { matchPrefix(); "MOV"; matchSpace(); matchDigits(); ", "; matchRegister() }
         let addRegex = Regex { matchPrefix(); "ADD"; matchSpace(); matchRegister(); ", "; matchRegister() }
@@ -79,8 +80,9 @@ class ViewModel: ObservableObject {
             } else {
                 line = line.uppercased()
             }
-            
-            if let match = line.wholeMatch(of: movRegex) {
+            if let _ = line.wholeMatch(of: mainRegex) {
+                main()
+            } else if let match = line.wholeMatch(of: movRegex) {
                 mov(source: match.output.3, destination: match.output.4)
             } else if let match = line.wholeMatch(of: movDRegex) {
                 movD(value: match.output.3, destination: match.output.4)
@@ -185,7 +187,12 @@ class ViewModel: ObservableObject {
             registers[register] = Int(UInt32.max)
         }
     }
-
+    
+    private func main() {
+        registers["EBP"] = lineNumber
+        addToLog("Setting EBP to a value \(lineNumber)")
+    }
+    
     private func mov(source: String, destination: String) {
         registers[destination, default: 0] = registers[source, default: 0]
         clamp(register: destination)

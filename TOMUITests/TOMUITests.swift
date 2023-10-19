@@ -44,13 +44,13 @@ final class TOMUITests: XCTestCase {
         incrementArrow.click()
         incrementArrow.click()
         app.steppers["Stepper"].decrementArrows.element.tap()
-        //screenShot(app)
+        screenShot(app)
         app.buttons["Play"].tap()
-        //screenShot(app)
+        screenShot(app)
         app.buttons["Reset"].tap()
-        //screenShot(app)
+        screenShot(app)
         app.buttons["Play"].tap()
-        //screenShot(app)
+        screenShot(app)
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
