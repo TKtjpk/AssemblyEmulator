@@ -10,7 +10,7 @@ import XCTest
 
 final class TOMUITests: XCTestCase {
     
-    var comandID: UUID!
+    let app = XCUIApplication()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -26,31 +26,37 @@ final class TOMUITests: XCTestCase {
     }
     
     override func setUp() {
+        
+        app.launch()
     }
 
-            func testExample() throws {
+    func testExample() throws {
         // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
+//        let app = XCUIApplication()
+//        app.launch()
         //screenShot(app)
-//        let stepperUp = app.steppers["Stepper"].incrementArrows.element
-//
-//        stepperUp.tap()
-//        stepperUp.tap()
-//        stepperUp.tap()
-                
+        let stepperUp = app.steppers["Stepper"].incrementArrows.element
+
+        stepperUp.tap()
+        stepperUp.tap()
+        stepperUp.tap()
+        let name = String(self.name)
         let incrementArrow = XCUIApplication().windows["Untitled"].steppers["Stepper"].children(matching: .incrementArrow).element
         incrementArrow.click()
         incrementArrow.click()
         incrementArrow.click()
         app.steppers["Stepper"].decrementArrows.element.tap()
-        screenShot(app)
+        screenShot(app, name: name)
+        testTakeScreenshots()
         app.buttons["Play"].tap()
-        screenShot(app)
+        screenShot(app, name: name)
+        testTakeScreenshots()
         app.buttons["Reset"].tap()
-        screenShot(app)
+        screenShot(app, name: name)
+        testTakeScreenshots()
         app.buttons["Play"].tap()
-        screenShot(app)
+        screenShot(app, name: name)
+        testTakeScreenshots()
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
@@ -63,11 +69,26 @@ final class TOMUITests: XCTestCase {
         }
     }
     
-    func screenShot(_ app: XCUIApplication) {
+    func screenShot(_ app: XCUIApplication, name: String) {
         let screenshot = app.screenshot()
         let attachment = XCTAttachment(screenshot: screenshot)
-        attachment.name = "some screenshot"
+        attachment.name = name
         attachment.lifetime = .keepAlways
         add(attachment)
+    }
+    
+    func testTakeScreenshots() {
+
+        // Take a screenshot of the current device's main screen.
+        let mainScreenScreenshot = XCUIScreen.main.screenshot()
+        
+        // Take a screenshot of an app's first window.
+        let app = XCUIApplication()
+        app.launch()
+        let windowScreenshot = app.windows.firstMatch.screenshot()
+        let attachment = XCTAttachment(screenshot: windowScreenshot)
+        attachment.lifetime = .keepAlways
+        add(attachment)
+
     }
 }
