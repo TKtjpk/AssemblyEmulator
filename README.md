@@ -1,5 +1,5 @@
 # TOM
-> Inspired by Paul Houdson from [HackingWithSwift](https://www.hackingwithswift.com), decided to move further and extend functionality of TOM application. It's purpose is to help understanding and learn in simple way about CPU register's, stack functionality and Assembly language which is direct 'translation' of CPU's instructions. Hope you'll find this app interesting.
+> Inspired by [@twostraw Paul Hudson](https://github.com/twostraws), decided to move further and extend functionality of TOM application. It's purpose is to help understanding and learn in simple way about CPU register's, stack functionality and Assembly language which is direct 'translation' of CPU's instructions. Hope you'll find this app interesting.
 
 > If you find any errors/mistakes in it, don't hesitate to contact me. I'll do my best to correct as far as applicable.
 
